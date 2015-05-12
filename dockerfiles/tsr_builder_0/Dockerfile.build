@@ -1,0 +1,13 @@
+#TSR comes with nrpe
+FROM goodgoblin/tsr_ruby
+#make a place for it
+RUN mkdir /tsr
+#copy it over
+COPY app /tsr/
+#install app
+COPY tsr_install_app.sh /
+RUN /tsr_install_app.sh
+COPY tsr_start_app.sh /
+# Run the app
+ENTRYPOINT "/tsr_start_app.sh"
+

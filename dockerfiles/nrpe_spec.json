@@ -1,0 +1,5 @@
+{ 
+"AttachStdout": true,
+"AttachStderr": true,
+"Tty": false,
+"Image": "goodgoblin/nrpe"}
