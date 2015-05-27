@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /** Example scheduler to launch Docker containers. */
 public class TsrScheduler implements Scheduler {
 
-  public static final String TSR_BUILD_IMAGE = "goodgoblin/tsr_buildpack_0";
+  public static final String TSR_BUILD_IMAGE = "goodgoblin/tsr_builder_0";
 
   /** Logger. */
   private static final Logger logger = LoggerFactory.getLogger(TsrScheduler.class);
@@ -107,7 +107,7 @@ public class TsrScheduler implements Scheduler {
                 .setType(Protos.Value.Type.SCALAR)
                 .setScalar(Protos.Value.Scalar.newBuilder().setValue(128)))
             .setContainer(containerInfoBuilder)
-            .setCommand(Protos.CommandInfo.newBuilder().setValue("https://github.com/railstutorial/sample_app_rails_4"))
+            .setCommand(Protos.CommandInfo.newBuilder().setValue("https://github.com/heroku/ruby-rails-sample"))
             .build();
 
         tasks.add(task);
